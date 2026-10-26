@@ -53,12 +53,37 @@ Built with **Three.js**, **WebXR**, and **Web Audio API**.
 
 ---
 
-## 🚀 How to Run
+## 🚀 Deployment & Cloud Hosting
 
-### Using the Python Streaming Server (Recommended)
+This repository is pre-configured with custom edge headers for **Vercel** (`vercel.json`) and **Netlify** (`netlify.toml`), supporting automatic HTTPS (mandatory for WebXR device sessions), byte-range MP4 video streaming, and CORS permissions.
+
+### Option A: Deploy to Vercel (Recommended)
+1. Go to [Vercel New Project](https://vercel.com/new).
+2. Connect your GitHub account and select **`jasonsprouse/vr-club`**.
+3. In **Framework Preset**, select **Other**.
+4. Leave Root Directory as `./` and click **Deploy**.
+5. Once deployed, open your `https://<project-name>.vercel.app` URL in any desktop browser or on your Meta Quest / Apple Vision Pro browser to experience the club!
+
+### Option B: Deploy to Netlify
+1. Go to [Netlify Dashboard](https://app.netlify.com/start).
+2. Choose **Import an existing project** > **GitHub** > **`jasonsprouse/vr-club`**.
+3. Set **Publish directory** to `.` (root).
+4. Click **Deploy vr-club**.
+5. Your club will be live at `https://<site-name>.netlify.app` with instant SSL/TLS.
+
+---
+
+## 💻 Local Development
+
+### Using the Python Streaming Server
 Open a terminal in this folder and run:
 ```bash
 python serve.py
 ```
 - Open `http://localhost:8080` in your desktop browser.
 - Or on your **Meta Quest Browser / VR Headset**, open `http://<YOUR-LOCAL-IP>:8080` (printed in the terminal).
+
+### Using Node.js / npx
+```bash
+npx serve . -p 8080
+```
